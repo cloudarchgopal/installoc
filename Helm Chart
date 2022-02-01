@@ -103,4 +103,5 @@ spec:
   ports:
 
 
-
+#finally run the helm upgrade command
+helm upgrade my-helm .
