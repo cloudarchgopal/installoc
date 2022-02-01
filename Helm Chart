@@ -105,3 +105,8 @@ spec:
 
 #finally run the helm upgrade command
 helm upgrade my-helm .
+
+#how to change the service using helm command line
+203  helm upgrade my-helm . --set service.type=LoadBalancer
+  204  helm upgrade my-helm . --set service.type=NodePort
+  205  helm upgrade my-helm . --set service.type=ClusterIP
