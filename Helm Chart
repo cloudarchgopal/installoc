@@ -12,3 +12,7 @@ name: my-helm
 version: 0.1.0
 appVersion: 1.0
 description: my custom helm chart
+
+###########now we will create a template directory where we are going to store my templated or k8s manifest. 
+mkdir templates
+tree
