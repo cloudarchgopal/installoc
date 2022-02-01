@@ -1,0 +1,63 @@
+ 127  export ARCH=$(case $(uname -m) in x86_64) echo -n amd64 ;; aarch64) echo -n arm64 ;; *) echo -n $(uname -m) ;; esac)
+  128  export OS=$(uname | awk '{print tolower($0)}')
+  129  export OPERATOR_SDK_DL_URL=https://github.com/operator-framework/operator-sdk/releases/download/v1.16.0
+  130  curl -LO ${OPERATOR_SDK_DL_URL}/operator-sdk_${OS}_${ARCH}
+  131  gpg --keyserver keyserver.ubuntu.com --recv-keys 052996E2A20B5C7E
+  132  curl -LO ${OPERATOR_SDK_DL_URL}/checksums.txt
+  133  curl -LO ${OPERATOR_SDK_DL_URL}/checksums.txt.asc
+  134  gpg -u "Operator SDK (release) <cncf-operator-sdk@cncf.io>" --verify checksums.txt.asc
+  135  grep operator-sdk_${OS}_${ARCH} checksums.txt | sha256sum -c -
+  136  chmod +x operator-sdk_${OS}_${ARCH} && sudo mv operator-sdk_${OS}_${ARCH} /usr/local/bin/operator-sdk
+  137  history
+  138  operator-sdk new nginx-operator   --api-version=example.com/v1alpha1   --kind=Nginx   --type=helm
+  139  operator-sdk init nginx-operator   --api-version=example.com/v1alpha1   --kind=Nginx   --type=helm
+  140  operator-sdk init nginx-operator --version=example.com/v1alpha1   --kind=Nginx   --type=helm
+  141  cd ..
+  142  mkdir nginx-operator
+  143  cd nginx-operator
+  144  operator-sdk init --plugins helm --domain example.com --group demo --version v1alpha1 --kind Nginx
+  145  ls
+  146  cd helm-charts/
+  147  ls
+  148  cd nginx/
+  149  ls
+  150  cd ..
+  151  ls
+  152  cd nginx/
+  153  ls
+  154  cat Chart.yaml
+  155  cat values.yaml
+  156  cd ..
+  157  vi config/samples/demo_v1alpha1_nginx.yaml
+  158  vi Makefile
+  159  make docker-build docker-push
+  160  apt install make
+  161  make docker-build docker-push
+  162  docker login
+  163  make docker-build docker-push
+  164  ls
+  165  vi Makefile
+  166  cd ..
+  167  ls
+  168  rm nginx-operator
+  169  rm -rf nginx-operator
+  170  mkdir nginx
+  171  cd nginx
+  172  operator-sdk init --plugins helm --domain gopal1409 --group demo --version v1alpha1 --kind Nginx
+  173  vi Makefile
+  174  make docker-build docker-push
+  175  operator-sdk olm install
+  176  operator-sdk olm status
+  177  make deploy
+  178  kubectl get deployment -n nginx-operator-system
+  179  make bundle bundle-build bundle-push
+  180  operator-sdk run bundle gopal1409/nginx-bundle:v0.0.1
+  181  kubectl apply -f config/samples/demo_v1alpha1_nginx.yaml
+  182  kubectl get deployment
+  183  kubectl get pods
+  184  kubectl get service
+  185  kubectl logs deployment.apps/nginx-operator-controller-manager  -n nginx-operator-system -c manager
+  186  kubectl delete -f config/samples/demo_v1alpha1_nginx.yaml
+  187  make undeploy
+  188  cd ..
+  189  rm -rf nginx
