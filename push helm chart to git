@@ -13,3 +13,6 @@
   229  git commit -m "my-repo"
   230  git remote add origin https://github.com/cloudarchgopal/helm_git-repo.git
   231  git branch
+How to add the git helm repo to your localmachine
+  236  helm repo add --username gitlogin@gmail.com --password putyourgithubtoken my-github-helm-=repo 'https://raw.githubusercontent.com/cloudarchgopal/helm_git-repo/master'
+  237  helm repo list
