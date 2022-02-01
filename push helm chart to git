@@ -1,7 +1,7 @@
 217  echo "# helm_git-repo" >> README.md
   218  git init
   219  pwd
-  220  helm package /root/linux-amd64/charts/my-helm/gitrepotest
+
   221  helm package /root/linux-amd64/charts/my-helm
   222  ls
   223  helm repo index .
