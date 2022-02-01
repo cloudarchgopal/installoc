@@ -1,0 +1,6 @@
+ 37  mkdir charts
+   38  cd charts
+   39  mkdir my-helm
+   40  cd my-helm/
+   41  apt install tree
+   42  tree
