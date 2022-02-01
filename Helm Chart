@@ -68,5 +68,8 @@ vi templates/deployment.yaml
  replicas: 1
 #replace the same with
  replicas: {{ .Values.replicaCount }}
+ 
+ #to check the values
+ helm inspect values .
 
 
