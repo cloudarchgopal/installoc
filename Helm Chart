@@ -84,6 +84,10 @@ vi templates/deployment.yaml
   
   123* helm inspect values .
 #verfiy the values.yaml file and check if the changes has happen in your values.yaml file
+root@ip-172-31-82-224:~/linux-amd64/charts/my-helm# cat values.yaml
+replicaCount: 1
+service:
+  type: NodePort
 
 #inside service.yaml file
 apiVersion: v1
