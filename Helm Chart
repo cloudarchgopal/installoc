@@ -52,4 +52,7 @@ helm upgrade my-helm
   104  helm rollback my-helm 2
   105  helm list
   106  cat Chart.yaml
+  
+  #how to uninstall the helm chart
+  helm uninstall my-helm
 
