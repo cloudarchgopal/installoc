@@ -61,3 +61,12 @@ vi values.yaml
 then inside the values.yaml file
 we will define a value
 replicaCount: 1
+
+#how to refer this value in deployment.yaml
+vi templates/deployment.yaml
+#this is the static value
+ replicas: 1
+#replace the same with
+ replicas: {{ .Values.replicaCount }}
+
+
