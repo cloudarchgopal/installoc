@@ -4,3 +4,11 @@
    40  cd my-helm/
    41  apt install tree
    42  tree
+   create a file Chart.yaml
+vi Chart.yaml
+inside the chart.yaml
+apiVersion: v1
+name: my-helm
+version: 0.1.0
+appVersion: 1.0
+description: my custom helm chart
