@@ -1,0 +1,24 @@
+1  apt-get update
+    2  go version
+    3  wget https://dl.google.com/go/go1.17.6.linux-amd64.tar.gz
+    4  rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
+    5  export PATH=$PATH:/usr/local/go/bin
+    6  source $HOME/.profile
+    7  go version
+    8  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    9  echo "$(<kubectl.sha256)  kubectl" | sha256sum --check
+   10  chmod +x kubectl
+   11  mv kubectl /usr/bin/
+   12  kubectl
+   13  wget https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
+   14  tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
+   15  cd linux-amd64/
+   16  mv helm /usr/bin
+   17  curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+   18  ibmcloud login
+   19  ibmcloud plugin install container-service
+   20  ibmcloud plugin install container-registry
+   21  ibmcloud plugin install observe-service
+   22  wget https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz
+   23  tar xvzf oc.tar.gz
+   24  mv oc /usr/bin
