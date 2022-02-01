@@ -1,0 +1,15 @@
+217  echo "# helm_git-repo" >> README.md
+  218  git init
+  219  pwd
+  220  helm package /root/linux-amd64/charts/my-helm/gitrepotest
+  221  helm package /root/linux-amd64/charts/my-helm
+  222  ls
+  223  helm repo index .
+  224  ls
+  225  cat index.yaml
+  226  git config --global user.email "gopal1409@gmail.com"
+  227  git config --global user.name "gopal das"
+  228  git add .
+  229  git commit -m "my-repo"
+  230  git remote add origin https://github.com/cloudarchgopal/helm_git-repo.git
+  231  git branch
