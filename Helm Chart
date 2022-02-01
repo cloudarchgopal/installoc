@@ -24,3 +24,6 @@ tree
  ####login to the openshift cluster using oc login and token
  helm install my-helm .
  ####this will install the deployment package
+ 
+ #### you can verify the same using
+ kubectl get deploy
