@@ -29,6 +29,6 @@ How to install docker
    30  apt-get update
    
    31  apt-get install docker-ce docker-ce-cli containerd.io
-   32 
+   32 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 33  sudo chmod +x /usr/local/bin/docker-compose
    34  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
