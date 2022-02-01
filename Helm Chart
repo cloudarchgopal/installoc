@@ -20,3 +20,7 @@ tree
 #inside my template folder we will create a deployment
  53  kubectl create deploy my-helm --image nginx --dry-run -o yaml > templates/deployment.yaml
  using tree command we will see the same
+ 
+ ####login to the openshift cluster using oc login and token
+ helm install my-helm .
+ ####this will install the deployment package
