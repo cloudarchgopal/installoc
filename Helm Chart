@@ -55,4 +55,9 @@ helm upgrade my-helm
   
   #how to uninstall the helm chart
   helm uninstall my-helm
-
+######helm chart with dynamic values
+we will create a values.yaml
+vi values.yaml
+then inside the values.yaml file
+we will define a value
+replicaCount: 1
