@@ -42,3 +42,14 @@ description: my custom helm chart
 
 #then we need to upgrade the chart
 helm upgrade my-helm 
+
+#rollback do not control the Revision we need to manually control the versioining
+
+100  helm list
+  101  helm rollback 1
+  102  helm rollback my-helm 1
+  103  helm list
+  104  helm rollback my-helm 2
+  105  helm list
+  106  cat Chart.yaml
+
