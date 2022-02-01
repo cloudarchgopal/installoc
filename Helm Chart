@@ -33,6 +33,12 @@ helm list
  89  kubectl expose deploy my-helm --port 80 --dry-run -o yaml > templates/service.yaml
    90  tree
    #after doing this change the chart.yaml
+   #we will add one more value for service file
+   root@ip-172-31-82-224:~/linux-amd64/charts/my-helm# cat values.yaml
+replicaCount: 1
+service
+  type: NodePort
+
    root@ip-172-31-82-224:~/linux-amd64/charts/my-helm# vi Chart.yaml
 apiVersion: v1
 name: my-helm
