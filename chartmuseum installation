@@ -9,3 +9,20 @@ curl -LO https://s3.amazonaws.com/chartmuseum/release/latest/bin/linux/amd64/cha
   chartmuseum --help
  
  chartmuseum --debug --port=8080 --storage="local" --storage-local-rootdir="./chartstorage"
+ 
+ #we will package the chart and push it 
+  11  helm repo list
+   12  helm list
+   13  helm repo add chartmuseum http://localhost:8080
+   14  helm repo list
+   15  helm search repo
+   16  helm search repo nginx
+   17  helm search repo chartmuseum
+   18  helm package my-helm
+   19  mkdir mychartdist
+   20  mv my-helm-0.3.0.tgz mychartdist/
+   21  cd mychartdist/
+   
+   23  curl --data-binary "@my-helm-0.3.0.tgz" http://yourvmpublicip:8080/api/charts
+   24  helm repo list
+
