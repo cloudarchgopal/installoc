@@ -27,3 +27,5 @@ tree
  
  #### you can verify the same using
  kubectl get deploy
+###verfy the chart installation using
+helm list
