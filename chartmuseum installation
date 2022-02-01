@@ -25,4 +25,10 @@ curl -LO https://s3.amazonaws.com/chartmuseum/release/latest/bin/linux/amd64/cha
    
    23  curl --data-binary "@my-helm-0.3.0.tgz" http://yourvmpublicip:8080/api/charts
    24  helm repo list
+   
+   #verify the chart
+    27  helm repo update
+   28  helm search repo
+   29  helm search repo -l
+
 
