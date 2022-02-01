@@ -71,5 +71,12 @@ vi templates/deployment.yaml
  
  #to check the values
  helm inspect values .
+ 
+ #there are two way to upgrade your values file one is taking an output while depoloyment
+  120  helm inspect values . > /tmp/my-helm.values
+  121  helm upgrade my-helm . --set replicaCount=2
+  
+  123* helm inspect values .
+#verfiy the values.yaml file and check if the changes has happen in your values.yaml file
 
 
