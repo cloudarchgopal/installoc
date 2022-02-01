@@ -1,0 +1,11 @@
+258  operator-sdk init --plugins helm --domain gopal1409 --group demo --version v1alpha1 --kind Nginx
+  259  ls
+  260  cd helm-charts/
+  261  lks
+  262  ls
+  263  cd nginx/
+  264  ls
+  265  history
+  266  tree
+  267  cd ..
+  268  history
