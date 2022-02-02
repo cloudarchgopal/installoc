@@ -12,4 +12,16 @@
 #start the same build config for an existing buildconfig
  442  oc start-build bc/hello-world
   443  oc get pods --watch
+#fort autmatied build
+#get the secret token when you are choosing the token search for generic toke
+ 450  oc get -o yaml buildconfig/hello-world
+ #once you got the token export the same as varaible
+  export GENERIC_SECRET=replaceitwithgenerictoken
+  #get the webhook url select the generic url
+  oc describe build/config/hello-world
+  
+  #copy the webhook url and replace the secret
+  culr -x POST -k webhookurl
+  #sample
+    curl -X POST -k https://c100-e.us-east.containers.cloud.ibm.com:32689/apis/build.openshift.io/v1/namespaces/default/buildconfigs/hello-world/webhooks/$GENERIC_SECRET/generic
 
