@@ -18,7 +18,7 @@
  #once you got the token export the same as varaible
   export GENERIC_SECRET=replaceitwithgenerictoken
   #get the webhook url select the generic url
-  oc describe build/config/hello-world
+  oc describe buildconfig/hello-world
   
   #copy the webhook url and replace the secret
   culr -x POST -k webhookurl
