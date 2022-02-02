@@ -3,3 +3,10 @@ oc new-app https://gitlab.com/practical-openshift/labs.git --context-dir s2i/rub
 
 #once i creaste the same in openshift cluster i need to check the logs
  321  oc logs -f buildconfig/labs
+ 
+ #check the running pod
+  389  oc get pods
+  390  oc edit pods labs-1-build
+  391  oc expose svc/labs
+  392  oc get route
+
