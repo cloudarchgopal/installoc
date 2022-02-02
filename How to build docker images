@@ -38,3 +38,18 @@ docker build -t pythonapp .
 
 #verify the image
 docker image
+
+################above container run as root privalage#############
+#modifythe dockerfile so that the image will be build with a user permission and run as a user########
+FROM python:3.8-alpine
+RUN mkdir /app
+ADD requirements.txt .
+RUN pip install -r requirements.txt
+USER root
+ADD . /app
+RUN chown -R 1001:0 /app
+USER 1001
+WORKDIR /app
+CMD ["python", "app.py"]
+
+#then again run the docker build -t pythonappnonroot .
