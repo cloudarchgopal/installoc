@@ -1,6 +1,10 @@
 before_script:
-  - 
+  - wget https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz
+  - tar xvzf oc.tar.gz
+  -  mv oc /usr/bin
+  - oc login --token=putyourowntowenusingvariable --server=https://c100-e.us-east.containers.cloud.ibm.com:32689
 # Set a post-commit hook
+
 oc set build-hook bc/hello-world \
   --post-commit \
   --script="echo Hello from build hook"
