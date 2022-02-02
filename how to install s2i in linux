@@ -1,0 +1,7 @@
+398  curl -s https://api.github.com/repos/openshift/source-to-image/releases/latest| grep browser_download_url | grep linux-amd64 | cut -d '"' -f 4  | wget -qi -
+  399  tar xvf source-to-image*.gz
+  400  sudo mv s2i /usr/local/bin
+  401  rm -rf /tmp/s2i/
+  402  which s2i
+  403  s2i
+  404  clear
