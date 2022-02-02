@@ -1,0 +1,40 @@
+First Make Directory pythonapp
+mkdir pythonapp
+cd pythonapp
+vi app.py
+#inside app.py put this content
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
+
+# Why you should run it at 0.0.0.0
+# https://stackoverflow.com/questions/30323224/deploying-a-minimal-flask-app-in-docker-server-connection-issues
+
+#create another file
+vi requirements.txt
+#put this content
+flask
+
+
+#finally create an dockerfile
+vi dockerfile
+#put this content isnide your dockerfil,
+FROM python:3.8-alpine
+RUN mkdir /app
+ADD . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]
+
+
+#now run the command 
+docker build -t pythonapp .
+
+#verify the image
+docker image
