@@ -4,4 +4,9 @@
   401  rm -rf /tmp/s2i/
   402  which s2i
   403  s2i
-  404  clear
+  #once download s2i we need to create a sample project
+   407  s2i create lighttpd-centos7 s2i-lighttpd
+  408  ls
+  409  cd s2i-lighttpd/
+  410  tree
+
