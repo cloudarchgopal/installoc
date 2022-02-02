@@ -1,0 +1,2 @@
+#first we will build s2i/ruby directory of the labs project
+oc new-app https://gitlab.com/practical-openshift/labs.git --context-dir s2i/ruby
