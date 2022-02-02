@@ -53,3 +53,23 @@ WORKDIR /app
 CMD ["python", "app.py"]
 
 #then again run the docker build -t pythonappnonroot .
+
+#to verify the container run as non root user
+FROM python:3.8
+RUN mkdir /app
+ADD requirements.txt .
+RUN pip install -r requirements.txt
+USER root
+ADD . /app
+RUN chown -R 1001:0 /app
+USER 1001
+WORKDIR /app
+CMD ["python", "app.py"]
+
+
+#rebuild the image 
+docker build -t pythonappnonroot .
+docker run -p 8080:5000 -d pythonappnonroo 
+docker ps
+docker exec -it containerid bash
+#you can see the container is runing as non root user
