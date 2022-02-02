@@ -9,4 +9,7 @@
   408  ls
   409  cd s2i-lighttpd/
   410  tree
+#start the same build config for an existing buildconfig
+ 442  oc start-build bc/hello-world
+  443  oc get pods --watch
 
