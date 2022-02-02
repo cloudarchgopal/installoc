@@ -4,3 +4,11 @@
   479  cd travisproject/
   480  ls
   481  rm -rf .git
+  
+  #Open your personal git
+  create a repo called as travisproject
+  once you create the repo intialized it
+  #create a token in github 
+  
+  #we need to login to travis ci. 
+  and import the project
