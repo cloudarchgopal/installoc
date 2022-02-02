@@ -1,0 +1,6 @@
+#we will clone an python repo
+477  cd /root
+  478  git clone https://github.com/cloudarchgopal/travisproject.git
+  479  cd travisproject/
+  480  ls
+  481  rm -rf .git
